@@ -1,0 +1,128 @@
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Collaboration_LLS.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Collaboration_LLS.pdb
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\AjaxControlToolkit.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Antlr3.Runtime.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\AspNet.ScriptManager.jQuery.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DayPilot.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DayPilot.MonthPicker.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.AspNet.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.Core.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OAuth.Consumer.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OAuth.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OpenId.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\EntityFramework.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.SignalR.Core.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.SignalR.Owin.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.Owin.Host.SystemWeb.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.QualityTools.Testing.Fakes.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.ScriptManager.MSAjax.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.ScriptManager.WebForms.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.Web.Infrastructure.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\System.Web.Optimization.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\System.Web.Providers.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\WebGrease.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Newtonsoft.Json.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Owin.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.SignalR.Core.xml
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.SignalR.Owin.xml
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.Owin.Host.SystemWeb.xml
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\EntityFramework.xml
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.Core.xml
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OAuth.xml
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OAuth.Consumer.xml
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OpenId.xml
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.AspNet.xml
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\bin\Newtonsoft.Json.xml
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\obj\Debug\Collaboration_LLS.dll
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\obj\Debug\Collaboration_LLS.pdb
+Y:\Drexel Project\Collaboration_LLS\Collaboration_LLS\obj\Debug\Collaboration_LLS.csprojFakesResolveAssemblyReference.cache
+D:\Collaboration_LLS\Collaboration_LLS\bin\Collaboration_LLS.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\Collaboration_LLS.pdb
+D:\Collaboration_LLS\Collaboration_LLS\bin\AjaxControlToolkit.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\Antlr3.Runtime.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\AspNet.ScriptManager.jQuery.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\DayPilot.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\DayPilot.MonthPicker.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.AspNet.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.Core.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OAuth.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OpenId.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\EntityFramework.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.QualityTools.Testing.Fakes.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.Web.Infrastructure.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\System.Web.Optimization.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\System.Web.Providers.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\WebGrease.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\Newtonsoft.Json.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\Owin.dll
+D:\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.SignalR.Owin.xml
+D:\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Collaboration_LLS\Collaboration_LLS\bin\EntityFramework.xml
+D:\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.Core.xml
+D:\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OAuth.xml
+D:\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OpenId.xml
+D:\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.AspNet.xml
+D:\Collaboration_LLS\Collaboration_LLS\bin\Newtonsoft.Json.xml
+D:\Collaboration_LLS\Collaboration_LLS\obj\Debug\Collaboration_LLS.csprojFakesResolveAssemblyReference.cache
+D:\Collaboration_LLS\Collaboration_LLS\obj\Debug\Collaboration_LLS.dll
+D:\Collaboration_LLS\Collaboration_LLS\obj\Debug\Collaboration_LLS.pdb
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Collaboration_LLS.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Collaboration_LLS.pdb
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\AjaxControlToolkit.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Antlr3.Runtime.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\AspNet.ScriptManager.jQuery.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DayPilot.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DayPilot.MonthPicker.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.AspNet.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.Core.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OAuth.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OpenId.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\EntityFramework.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.QualityTools.Testing.Fakes.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.ScriptManager.WebForms.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.Web.Infrastructure.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\System.Web.Optimization.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\System.Web.Providers.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\WebGrease.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Newtonsoft.Json.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Owin.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.SignalR.Owin.xml
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\EntityFramework.xml
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.Core.xml
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OAuth.xml
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OpenId.xml
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\DotNetOpenAuth.AspNet.xml
+D:\final\Collaboration_LLS\Collaboration_LLS\bin\Newtonsoft.Json.xml
+D:\final\Collaboration_LLS\Collaboration_LLS\obj\Debug\Collaboration_LLS.csprojFakesResolveAssemblyReference.cache
+D:\final\Collaboration_LLS\Collaboration_LLS\obj\Debug\Collaboration_LLS.csprojResolveAssemblyReference.cache
+D:\final\Collaboration_LLS\Collaboration_LLS\obj\Debug\Collaboration_LLS.dll
+D:\final\Collaboration_LLS\Collaboration_LLS\obj\Debug\Collaboration_LLS.pdb

@@ -1,0 +1,542 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PanelAdmin.master.cs" Inherits="Collaboration_LLS.Panel.PanelAdmin" %>
+
+<%@ Import Namespace="System.Data.SqlClient" %>
+<%@ Import Namespace="System.Data" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from bucketadmin.themebucket.net/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 31 Jul 2014 11:12:06 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="../App_Themes/Home/images/favicon.html">
+    <title>LLS</title>
+    <!--Core CSS -->
+    <link href="../App_Themes/Home/bs3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../App_Themes/Home/js/jquery-ui/jquery-ui-1.10.1.custom.min.css" rel="stylesheet">
+    <link href="../App_Themes/Home/css/bootstrap-reset.css" rel="stylesheet">
+    <link href="../App_Themes/Home/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../App_Themes/Home/js/jvector-map/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+    <link href="../App_Themes/Home/css/clndr.css" rel="stylesheet">
+    <!--clock css-->
+    <link href="../App_Themes/Home/js/css3clock/css/style.css" rel="stylesheet">
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="../App_Themes/Home/js/morris-chart/morris.css">
+    <!-- Custom styles for this template -->
+    <link href="../App_Themes/Home/css/style.css" rel="stylesheet">
+    <link href="../App_Themes/Home/css/style-responsive.css" rel="stylesheet" />
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]>
+    <script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <%
+        try
+        {
+    %>
+    <section id="container">
+        <!--header start-->
+        <header class="header fixed-top clearfix">
+            <!--logo start-->
+            <div class="brand">
+
+                <a href="Dashboard.aspx" class="logo">
+                    <img src="../App_Themes/Home/images/lls-logo.png" alt="" style="height: 70px; width: 160px;">
+                </a>
+                <div class="sidebar-toggle-box">
+                    <div class="fa fa-bars"></div>
+                </div>
+            </div>
+            <!--logo end-->
+
+
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- settings start -->
+                    <%System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
+                      con.Open();
+                      SqlCommand cmd2 = new SqlCommand("Select top 5 * from [Notifications] where [Receiver] = @receiver and [read] = 0 and [Type] = @message order by [SendTime] desc", con);
+                      cmd2.Parameters.AddWithValue("@receiver", (string)Session["LLS_EmailId"]);
+                      cmd2.Parameters.AddWithValue("@message", "poll");
+                      SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+                      DataTable dt2 = new DataTable();
+                      da2.Fill(dt2);
+                      int count2 = 0;%>
+
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-tasks"></i>
+                            <span class="badge bg-success"><%=dt2.Rows.Count%></span>
+                        </a>
+                        <ul class="dropdown-menu extended tasks-bar">
+                            <li>
+                                <p class="">You have <%=dt2.Rows.Count%> polls.</p>
+                            </li>
+                            <% 
+            while (count2 < dt2.Rows.Count)
+            {
+
+                DataRow row2 = dt2.Rows[count2];
+                string id1 = row2["pollId"].ToString();
+                string id2 = row2["Id"].ToString();
+                            %>
+                            <li>
+
+                                <a href="Poll.aspx?pollId=<%=id1%>&nid=<%=id2%>">
+                                    <div class="task-info clearfix">
+                                        <div class="desc pull-left">
+                                            <h5>
+                                                <%=row2["Creator"].ToString()%> created a poll.</h5>
+                                            <%--<p>25% , Deadline  12 June’13</p>--%>
+                                        </div>
+                                        <span class="notification-pie-chart pull-right" data-percent="45">
+                                            <span class="percent"></span>
+                                        </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <%count2++;
+            } %>
+                            <li class="external">
+                                <a href="#">See All Tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- settings end -->
+                    <!-- inbox dropdown start-->
+                    <%-- <%
+            SqlCommand cmd1 = new SqlCommand("Select top 5 * from [Notifications] where [Receiver] = @receiver and [read] = 0 and [Type] = @message order by [SendTime] desc", con);
+            cmd1.Parameters.AddWithValue("@receiver", (string)Session["LLS_EmailId"]);
+            cmd1.Parameters.AddWithValue("@message", "message");
+            SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+            DataTable dt1 = new DataTable();
+            da1.Fill(dt1);
+            int count1 = 0; %>
+                    <li id="header_inbox_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="badge bg-important"><%=dt1.Rows.Count %></span>
+                        </a>
+                        <ul class="dropdown-menu extended inbox">
+                            <li>
+                                <p class="red">You have <%=dt1.Rows.Count %> Messages</p>
+                            </li>
+                            <% 
+            while (count1 < dt1.Rows.Count)
+            {
+
+                DataRow row1 = dt1.Rows[count1];%>
+                            <li>
+                                <a href="#">
+                                    <span class="photo">
+                                        <img alt="avatar" src="../App_Themes/Home/images/avatar-mini.jpg"></span>
+                                    <span class="subject">
+                                        <span class="from"><%=row1["Creator"].ToString() %> sent you a message.</span>
+                                        <span class="time"><%=row1["Time"].ToString() %></span>
+                                    </span>
+                                </a>
+                            </li>
+                            <%count1++;
+            } %>
+                            <li>
+                                <a href="#">See all messages</a>
+                            </li>
+                        </ul>
+
+                    </li>--%>
+                    <%//System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
+            //con.Open();
+            SqlCommand cmd = new SqlCommand("Select top 5 * from [Notifications] where [Receiver] = @receiver and [read] = 0 and [Type] = @type  order by [SendTime] desc", con);
+            cmd.Parameters.AddWithValue("@receiver", (string)Session["LLS_EmailId"]);
+            cmd.Parameters.AddWithValue("@type", "sharedevent");
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            int count = 0; %>
+                    <!-- inbox dropdown end -->
+                    <!-- notification dropdown start-->
+                    <li id="header_notification_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge bg-warning"><%=dt.Rows.Count%></span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <li>
+                                <p>Notifications</p>
+                            </li>
+                            <% 
+            while (count < dt.Rows.Count)
+            {
+
+                DataRow row = dt.Rows[count];
+                String type = row["Type"].ToString();
+                String se = "sharedevent";
+                String p = "poll";
+                string m = "message";
+                String display = "";
+                if (String.Compare(type, se) == 0)
+                {
+                    display = row["Creator"].ToString() + " created an event";
+                }
+                else if (String.Compare(type, p) == 0)
+                {
+                    display = row["Creator"].ToString() + " created a poll";
+                }
+                else if (String.Compare(type, m) == 0)
+                {
+                    display = row["Creator"].ToString() + " send you a message";
+                }
+                string id = row["Id"].ToString(); %>
+                            <li>
+                                <div class="alert alert-info clearfix">
+                                    <span class="alert-icon"><i class="fa fa-bolt"></i></span>
+                                    <div class="noti-info">
+                                        <a href="EventDisplay.aspx?Id=<%=id%>">
+                                            <%=display %>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <%      count++;
+
+            }
+                                
+                            %>
+                            <li>
+                                <p class="external">You have <%=dt.Rows.Count%> notifications.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- notification dropdown end -->
+                </ul>
+                <!--  notification end -->
+            </div>
+            <div class="top-nav clearfix">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <%--<li>
+                        <input type="text" class="form-control search" placeholder=" Search">
+                    </li>--%>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" id="imgUser" runat="server" src="../App_Themes/Home/images/avatar1_small.jpg">
+                            <asp:Label ID="lblUserName" runat="server" class="username">User</asp:Label>
+                            <b class="caret"></b>
+                        </a>
+                        <% string email = Session["LLS_EmailId"].ToString(); %>
+                        <ul class="dropdown-menu extended logout">
+                            <li><a href="Profile.aspx?EmailId=<%=email%>"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                            <li><a href="ChangePassword.aspx"><i class="fa fa-cog"></i>Change Password</a></li>
+                            <li><a href="LinkedIn.aspx"><i class="fa fa-linkedin"></i>LinkedIn</a></li>
+                            <li><a href="Lockscreen.aspx"><i class="fa fa-pinterest"></i>Lock Screen</a></li>
+                            <li><a href="login.aspx"><i class="fa fa-key"></i>Log Out</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                    <li>
+                        <div class="toggle-right-box">
+                            <div class="fa fa-bars"></div>
+                        </div>
+                    </li>
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse">
+                <!-- sidebar menu start-->
+                <div class="leftside-navigation">
+                    <ul class="sidebar-menu" id="nav-accordion">
+                        <li>
+                            <a class="active" href="Dashboard.aspx">
+                                <i class="fa fa-dashboard"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <i class="fa fa-book"></i>
+                                <span>Features</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="Members.aspx">Members</a></li>
+                                <li><a href="Calendar.aspx">Calendar</a></li>
+                                <li><a href="index.htm?EmailId=<%=Session["LLS_EmailId"].ToString() %>" target="_blank">Chat Room</a></li>
+                                <li><a href="PollSolutions.aspx">Polls</a></li>
+                                <li><a href="CreateEvent.aspx">Send Event Alerts</a></li>
+                                <li><a href="FileManager.aspx">File Manager</a></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+
+                <asp:ContentPlaceHolder ID="cpAdmin" runat="server"></asp:ContentPlaceHolder>
+
+            </section>
+        </section>
+        <!--main content end-->
+        <!--right sidebar start-->
+        <div class="right-sidebar">
+            <%--<div class="search-row">
+                <input type="text" placeholder="Search" class="form-control">
+            </div>--%>
+            <br />
+            <br />
+            <br />
+            <div class="right-stat-bar">
+                <ul class="right-side-accordion">
+                    <li class="widget-collapsible" style="display: none;">
+                        <a href="#" class="head widget-head red-bg active clearfix">
+                            <span class="pull-left">work progress (5)</span>
+                            <span class="pull-right widget-collapse"><i class="ico-minus"></i></span>
+                        </a>
+                        <ul class="widget-container">
+                            <li>
+                                <div class="prog-row side-mini-stat clearfix">
+                                    <div class="side-graph-info">
+                                        <h4>Target sell</h4>
+                                        <p>
+                                            25%, Deadline 12 june 13
+                                        </p>
+                                    </div>
+                                    <div class="side-mini-graph">
+                                        <div class="target-sell">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="prog-row side-mini-stat">
+                                    <div class="side-graph-info">
+                                        <h4>product delivery</h4>
+                                        <p>
+                                            55%, Deadline 12 june 13
+                                        </p>
+                                    </div>
+                                    <div class="side-mini-graph">
+                                        <div class="p-delivery">
+                                            <div class="sparkline" data-type="bar" data-resize="true" data-height="30" data-width="90%" data-bar-color="#39b7ab" data-bar-width="5" data-data="[200,135,667,333,526,996,564,123,890,564,455]">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="prog-row side-mini-stat">
+                                    <div class="side-graph-info payment-info">
+                                        <h4>payment collection</h4>
+                                        <p>
+                                            25%, Deadline 12 june 13
+                                        </p>
+                                    </div>
+                                    <div class="side-mini-graph">
+                                        <div class="p-collection">
+                                            <span class="pc-epie-chart" data-percent="45">
+                                                <span class="percent"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="prog-row side-mini-stat">
+                                    <div class="side-graph-info">
+                                        <h4>delivery pending</h4>
+                                        <p>
+                                            44%, Deadline 12 june 13
+                                        </p>
+                                    </div>
+                                    <div class="side-mini-graph">
+                                        <div class="d-pending">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="prog-row side-mini-stat">
+                                    <div class="col-md-12">
+                                        <h4>total progress</h4>
+                                        <p>
+                                            50%, Deadline 12 june 13
+                                        </p>
+                                        <div class="progress progress-xs mtop10">
+                                            <div style="width: 50%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" role="progressbar" class="progress-bar progress-bar-info">
+                                                <span class="sr-only">50% Complete</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="widget-collapsible">
+                        <a href="#" class="head widget-head terques-bg active clearfix">
+                            <span class="pull-left">contact online (5)</span>
+                            <span class="pull-right widget-collapse"><i class="ico-minus"></i></span>
+                        </a>
+                        <ul class="widget-container">
+                            <li>
+                                <asp:PlaceHolder ID="members" runat="server"></asp:PlaceHolder>
+                                <p class="text-center">
+                                    <a href="Members.aspx" class="view-btn">View all Contacts</a>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="widget-collapsible" style="display: none;">
+                        <a href="#" class="head widget-head purple-bg active">
+                            <span class="pull-left">recent activity (3)</span>
+                            <span class="pull-right widget-collapse"><i class="ico-minus"></i></span>
+                        </a>
+                        <ul class="widget-container">
+                            <li>
+                                <div class="prog-row">
+                                    <div class="user-thumb rsn-activity">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    <div class="rsn-details ">
+                                        <p class="text-muted">
+                                            just now
+                                        </p>
+                                        <p>
+                                            <a href="#">Jim Doe </a>Purchased new equipments for zonal office setup
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="prog-row">
+                                    <div class="user-thumb rsn-activity">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    <div class="rsn-details ">
+                                        <p class="text-muted">
+                                            2 min ago
+                                        </p>
+                                        <p>
+                                            <a href="#">Jane Doe </a>Purchased new equipments for zonal office setup
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="prog-row">
+                                    <div class="user-thumb rsn-activity">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    <div class="rsn-details ">
+                                        <p class="text-muted">
+                                            1 day ago
+                                        </p>
+                                        <p>
+                                            <a href="#">Jim Doe </a>Purchased new equipments for zonal office setup
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="widget-collapsible" style="display: none;">
+                        <a href="#" class="head widget-head yellow-bg active">
+                            <span class="pull-left">shipment status</span>
+                            <span class="pull-right widget-collapse"><i class="ico-minus"></i></span>
+                        </a>
+                        <ul class="widget-container">
+                            <li>
+                                <div class="col-md-12">
+                                    <div class="prog-row">
+                                        <p>
+                                            Full sleeve baby wear (SL: 17665)
+                                        </p>
+                                        <div class="progress progress-xs mtop10">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                                <span class="sr-only">40% Complete</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="prog-row">
+                                        <p>
+                                            Full sleeve baby wear (SL: 17665)
+                                        </p>
+                                        <div class="progress progress-xs mtop10">
+                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                                <span class="sr-only">70% Completed</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+        <!--right sidebar end-->
+    </section>
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <!--Core js-->
+    <script src="../App_Themes/Home/js/jquery.js"></script>
+    <script src="../App_Themes/Home/js/jquery-ui/jquery-ui-1.10.1.custom.min.js"></script>
+    <script src="../App_Themes/Home/bs3/js/bootstrap.min.js"></script>
+    <script src="../App_Themes/Home/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="../App_Themes/Home/js/jquery.scrollTo.min.js"></script>
+    <script src="../App_Themes/Home/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.js"></script>
+    <script src="../App_Themes/Home/js/jquery.nicescroll.js"></script>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
+    <script src="../App_Themes/Home/js/skycons/skycons.js"></script>
+    <script src="../App_Themes/Home/js/jquery.scrollTo/jquery.scrollTo.js"></script>
+    <script src="../App_Themes/Home/cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="../App_Themes/Home/js/calendar/clndr.js"></script>
+    <script src="../App_Themes/Home/cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <script src="../App_Themes/Home/js/calendar/moment-2.2.1.js"></script>
+    <script src="../App_Themes/Home/js/evnt.calendar.init.js"></script>
+    <script src="../App_Themes/Home/js/jvector-map/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="../App_Themes/Home/js/jvector-map/jquery-jvectormap-us-lcc-en.js"></script>
+    <script src="../App_Themes/Home/js/gauge/gauge.js"></script>
+    <!--clock init-->
+    <script src="../App_Themes/Home/js/css3clock/js/css3clock.js"></script>
+    <!--Easy Pie Chart-->
+    <script src="../App_Themes/Home/js/easypiechart/jquery.easypiechart.js"></script>
+    <!--Sparkline Chart-->
+    <script src="../App_Themes/Home/js/sparkline/jquery.sparkline.js"></script>
+    <!--Morris Chart-->
+    <script src="../App_Themes/Home/js/morris-chart/morris.js"></script>
+    <script src="../App_Themes/Home/js/morris-chart/raphael-min.js"></script>
+    <!--jQuery Flot Chart-->
+    <script src="../App_Themes/Home/js/flot-chart/jquery.flot.js"></script>
+    <script src="../App_Themes/Home/js/flot-chart/jquery.flot.tooltip.min.js"></script>
+    <script src="../App_Themes/Home/js/flot-chart/jquery.flot.resize.js"></script>
+    <script src="../App_Themes/Home/js/flot-chart/jquery.flot.pie.resize.js"></script>
+    <script src="../App_Themes/Home/js/flot-chart/jquery.flot.animator.min.js"></script>
+    <script src="../App_Themes/Home/js/flot-chart/jquery.flot.growraf.js"></script>
+    <script src="../App_Themes/Home/js/dashboard.js"></script>
+    <script src="../App_Themes/Home/js/jquery.customSelect.min.js"></script>
+    <!--common script init for all pages-->
+    <script src="../App_Themes/Home/js/scripts.js"></script>
+    <!--script for this page-->
+    <%
+        
+        }
+        catch (Exception ex)
+        {
+            //Response.Redirect(ex.Message);
+            Response.Redirect("Error.aspx");
+        } %>
+</body>
+
+<!-- Mirrored from bucketadmin.themebucket.net/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 31 Jul 2014 11:12:48 GMT -->
+</html>

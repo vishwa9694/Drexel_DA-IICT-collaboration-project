@@ -1,0 +1,1399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE57797F-92F4-4A74-93B8-ED4989D42443}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Collaboration_LLS</RootNamespace>
+    <AssemblyName>Collaboration_LLS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="DayPilot, Version=7.6.3002.1, Culture=neutral, PublicKeyToken=426941954f05e7fe, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DayPilot.dll</HintPath>
+    </Reference>
+    <Reference Include="DayPilot.MonthPicker">
+      <HintPath>..\packages\DayPilot.MonthPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\..\..\SignalRChatRoom\SignalRChat\bin\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin">
+      <HintPath>..\..\..\SignalRChatRoom\SignalRChat\bin\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\..\..\SignalRChatRoom\SignalRChat\bin\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\..\SignalRChatRoom\SignalRChat\bin\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.7.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.20\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.4.5.6\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.4.5.6\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.0\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.0.0\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Themes\Home\adobeair\bs3\css\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\adobeair\bs3\js\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\adobeair\css\bootstrap-reset.html" />
+    <Content Include="App_Themes\Home\adobeair\css\clndr.html" />
+    <Content Include="App_Themes\Home\adobeair\css\style-responsive.html" />
+    <Content Include="App_Themes\Home\adobeair\css\style.html" />
+    <Content Include="App_Themes\Home\adobeair\font-awesome\css\font-awesome.html" />
+    <Content Include="App_Themes\Home\adobeair\images\avatar-mini-2.html" />
+    <Content Include="App_Themes\Home\adobeair\images\avatar-mini-3.html" />
+    <Content Include="App_Themes\Home\adobeair\images\avatar-mini.html" />
+    <Content Include="App_Themes\Home\adobeair\images\avatar1.html" />
+    <Content Include="App_Themes\Home\adobeair\images\avatar1_small.html" />
+    <Content Include="App_Themes\Home\adobeair\images\chat-avatar2.html" />
+    <Content Include="App_Themes\Home\adobeair\images\chat-user-thumb-f.html" />
+    <Content Include="App_Themes\Home\adobeair\images\chat-user-thumb.html" />
+    <Content Include="App_Themes\Home\adobeair\images\favicon.html" />
+    <Content Include="App_Themes\Home\adobeair\images\logo.html" />
+    <Content Include="App_Themes\Home\adobeair\images\weather_image.html" />
+    <Content Include="App_Themes\Home\adobeair\js\calendar\clndr.html" />
+    <Content Include="App_Themes\Home\adobeair\js\calendar\moment-2.2.1.html" />
+    <Content Include="App_Themes\Home\adobeair\js\css3clock\css\style.html" />
+    <Content Include="App_Themes\Home\adobeair\js\css3clock\js\css3clock.html" />
+    <Content Include="App_Themes\Home\adobeair\js\dashboard.html" />
+    <Content Include="App_Themes\Home\adobeair\js\easypiechart\jquery.easypiechart.html" />
+    <Content Include="App_Themes\Home\adobeair\js\evnt.calendar.init.html" />
+    <Content Include="App_Themes\Home\adobeair\js\flot-chart\jquery.flot.animator.min.html" />
+    <Content Include="App_Themes\Home\adobeair\js\flot-chart\jquery.flot.growraf.html" />
+    <Content Include="App_Themes\Home\adobeair\js\flot-chart\jquery.flot.html" />
+    <Content Include="App_Themes\Home\adobeair\js\flot-chart\jquery.flot.pie.resize.html" />
+    <Content Include="App_Themes\Home\adobeair\js\flot-chart\jquery.flot.resize.html" />
+    <Content Include="App_Themes\Home\adobeair\js\flot-chart\jquery.flot.tooltip.min.html" />
+    <Content Include="App_Themes\Home\adobeair\js\gauge\gauge.html" />
+    <Content Include="App_Themes\Home\adobeair\js\jQuery-slimScroll-1.3.0\jquery.slimscroll.html" />
+    <Content Include="App_Themes\Home\adobeair\js\jquery-ui\jquery-ui-1.10.1.custom.min-2.html" />
+    <Content Include="App_Themes\Home\adobeair\js\jquery-ui\jquery-ui-1.10.1.custom.min.html" />
+    <Content Include="App_Themes\Home\adobeair\js\jquery.customSelect.min.html" />
+    <Content Include="App_Themes\Home\adobeair\js\jquery.dcjqaccordion.2.7.html" />
+    <Content Include="App_Themes\Home\adobeair\js\jquery.html" />
+    <Content Include="App_Themes\Home\adobeair\js\jquery.nicescroll.html" />
+    <Content Include="App_Themes\Home\adobeair\js\jquery.scrollTo.min.html" />
+    <Content Include="App_Themes\Home\adobeair\js\jquery.scrollTo\jquery.scrollTo.html" />
+    <Content Include="App_Themes\Home\adobeair\js\jvector-map\jquery-jvectormap-1.2.2.html" />
+    <Content Include="App_Themes\Home\adobeair\js\jvector-map\jquery-jvectormap-1.2.2.min.html" />
+    <Content Include="App_Themes\Home\adobeair\js\jvector-map\jquery-jvectormap-us-lcc-en.html" />
+    <Content Include="App_Themes\Home\adobeair\js\morris-chart\morris-2.html" />
+    <Content Include="App_Themes\Home\adobeair\js\morris-chart\morris.html" />
+    <Content Include="App_Themes\Home\adobeair\js\morris-chart\raphael-min.html" />
+    <Content Include="App_Themes\Home\adobeair\js\scripts.html" />
+    <Content Include="App_Themes\Home\adobeair\js\skycons\skycons.html" />
+    <Content Include="App_Themes\Home\adobeair\js\sparkline\jquery.sparkline.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\bs3\css\bootstrap.min-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\bs3\css\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\bs3\js\bootstrap.min-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\bs3\js\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\css\bootstrap-reset-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\css\bootstrap-reset.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\css\clndr-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\css\clndr.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\css\style-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\css\style-responsive-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\css\style-responsive.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\css\style.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\font-awesome\css\font-awesome-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\font-awesome\css\font-awesome.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\avatar-mini-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\avatar-mini-3.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\avatar-mini-4.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\avatar-mini-5.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\avatar-mini-6.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\avatar-mini.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\avatar1-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\avatar1.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\avatar1_small-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\avatar1_small.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\chat-avatar2-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\chat-avatar2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\chat-user-thumb-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\chat-user-thumb-f-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\chat-user-thumb-f.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\chat-user-thumb.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\favicon-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\favicon.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\logo.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\logo.png" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\weather_image-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\images\weather_image.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\calendar\clndr-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\calendar\clndr.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\calendar\moment-2.2.1-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\calendar\moment-2.2.1.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\css3clock\css\style-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\css3clock\css\style.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\css3clock\js\css3clock-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\css3clock\js\css3clock.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\dashboard-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\dashboard.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\easypiechart\jquery.easypiechart-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\easypiechart\jquery.easypiechart.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\evnt.calendar.init-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\evnt.calendar.init.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\flot-chart\jquery.flot-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\flot-chart\jquery.flot.animator.min-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\flot-chart\jquery.flot.animator.min.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\flot-chart\jquery.flot.growraf-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\flot-chart\jquery.flot.growraf.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\flot-chart\jquery.flot.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\flot-chart\jquery.flot.pie.resize-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\flot-chart\jquery.flot.pie.resize.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\flot-chart\jquery.flot.resize-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\flot-chart\jquery.flot.resize.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\flot-chart\jquery.flot.tooltip.min-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\flot-chart\jquery.flot.tooltip.min.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\gauge\gauge-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\gauge\gauge.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jQuery-slimScroll-1.3.0\jquery.slimscroll-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jQuery-slimScroll-1.3.0\jquery.slimscroll.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery-ui\jquery-ui-1.10.1.custom.min-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery-ui\jquery-ui-1.10.1.custom.min-3.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery-ui\jquery-ui-1.10.1.custom.min-4.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery-ui\jquery-ui-1.10.1.custom.min.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery.customSelect.min-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery.customSelect.min.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery.dcjqaccordion.2.7-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery.dcjqaccordion.2.7.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery.nicescroll-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery.nicescroll.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery.scrollTo.min-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery.scrollTo.min.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery.scrollTo\jquery.scrollTo-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jquery.scrollTo\jquery.scrollTo.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jvector-map\jquery-jvectormap-1.2.2-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jvector-map\jquery-jvectormap-1.2.2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jvector-map\jquery-jvectormap-1.2.2.min-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jvector-map\jquery-jvectormap-1.2.2.min.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jvector-map\jquery-jvectormap-us-lcc-en-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\jvector-map\jquery-jvectormap-us-lcc-en.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\morris-chart\morris-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\morris-chart\morris-3.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\morris-chart\morris-4.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\morris-chart\morris.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\morris-chart\raphael-min-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\morris-chart\raphael-min.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\scripts-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\scripts.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\skycons\skycons-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\skycons\skycons.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\sparkline\jquery.sparkline-2.html" />
+    <Content Include="App_Themes\Home\AppleWebKit\js\sparkline\jquery.sparkline.html" />
+    <Content Include="App_Themes\Home\bs3\css\bootstrap.min.css" />
+    <Content Include="App_Themes\Home\bs3\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Themes\Home\bs3\js\bootstrap.min.js" />
+    <Content Include="App_Themes\Home\bucket-ico-fonts\bucket-ico-font.svg" />
+    <Content Include="App_Themes\Home\cdnjs.cloudflare.com\ajax\libs\jquery-easing\1.3\jquery.easing.min.js" />
+    <Content Include="App_Themes\Home\cdnjs.cloudflare.com\ajax\libs\underscore.js\1.5.2\underscore-min.js" />
+    <Content Include="App_Themes\Home\Chrome\bs3\css\bootstrap.min-2.html" />
+    <Content Include="App_Themes\Home\Chrome\bs3\css\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\Chrome\bs3\js\bootstrap.min-2.html" />
+    <Content Include="App_Themes\Home\Chrome\bs3\js\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\Chrome\css\bootstrap-reset-2.html" />
+    <Content Include="App_Themes\Home\Chrome\css\bootstrap-reset.html" />
+    <Content Include="App_Themes\Home\Chrome\css\clndr-2.html" />
+    <Content Include="App_Themes\Home\Chrome\css\clndr.html" />
+    <Content Include="App_Themes\Home\Chrome\css\style-2.html" />
+    <Content Include="App_Themes\Home\Chrome\css\style-responsive-2.html" />
+    <Content Include="App_Themes\Home\Chrome\css\style-responsive.html" />
+    <Content Include="App_Themes\Home\Chrome\css\style.html" />
+    <Content Include="App_Themes\Home\Chrome\font-awesome\css\font-awesome-2.html" />
+    <Content Include="App_Themes\Home\Chrome\font-awesome\css\font-awesome.html" />
+    <Content Include="App_Themes\Home\Chrome\images\avatar-mini-2.html" />
+    <Content Include="App_Themes\Home\Chrome\images\avatar-mini-3.html" />
+    <Content Include="App_Themes\Home\Chrome\images\avatar-mini-4.html" />
+    <Content Include="App_Themes\Home\Chrome\images\avatar-mini-5.html" />
+    <Content Include="App_Themes\Home\Chrome\images\avatar-mini-6.html" />
+    <Content Include="App_Themes\Home\Chrome\images\avatar-mini.html" />
+    <Content Include="App_Themes\Home\Chrome\images\avatar1-2.html" />
+    <Content Include="App_Themes\Home\Chrome\images\avatar1.html" />
+    <Content Include="App_Themes\Home\Chrome\images\avatar1_small-2.html" />
+    <Content Include="App_Themes\Home\Chrome\images\avatar1_small.html" />
+    <Content Include="App_Themes\Home\Chrome\images\chat-avatar2-2.html" />
+    <Content Include="App_Themes\Home\Chrome\images\chat-avatar2.html" />
+    <Content Include="App_Themes\Home\Chrome\images\chat-user-thumb-2.html" />
+    <Content Include="App_Themes\Home\Chrome\images\chat-user-thumb-f-2.html" />
+    <Content Include="App_Themes\Home\Chrome\images\chat-user-thumb-f.html" />
+    <Content Include="App_Themes\Home\Chrome\images\chat-user-thumb.html" />
+    <Content Include="App_Themes\Home\Chrome\images\favicon-2.html" />
+    <Content Include="App_Themes\Home\Chrome\images\favicon.html" />
+    <Content Include="App_Themes\Home\Chrome\images\logo-2.html" />
+    <Content Include="App_Themes\Home\Chrome\images\logo.html" />
+    <Content Include="App_Themes\Home\Chrome\images\weather_image-2.html" />
+    <Content Include="App_Themes\Home\Chrome\images\weather_image.html" />
+    <Content Include="App_Themes\Home\Chrome\js\calendar\clndr-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\calendar\clndr.html" />
+    <Content Include="App_Themes\Home\Chrome\js\calendar\moment-2.2.1-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\calendar\moment-2.2.1.html" />
+    <Content Include="App_Themes\Home\Chrome\js\css3clock\css\style-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\css3clock\css\style.html" />
+    <Content Include="App_Themes\Home\Chrome\js\css3clock\js\css3clock-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\css3clock\js\css3clock.html" />
+    <Content Include="App_Themes\Home\Chrome\js\dashboard.html" />
+    <Content Include="App_Themes\Home\Chrome\js\dashboard.js" />
+    <Content Include="App_Themes\Home\Chrome\js\easypiechart\jquery.easypiechart-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\easypiechart\jquery.easypiechart.html" />
+    <Content Include="App_Themes\Home\Chrome\js\evnt.calendar.init-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\evnt.calendar.init.html" />
+    <Content Include="App_Themes\Home\Chrome\js\flot-chart\jquery.flot-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\flot-chart\jquery.flot.animator.min-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\flot-chart\jquery.flot.animator.min.html" />
+    <Content Include="App_Themes\Home\Chrome\js\flot-chart\jquery.flot.growraf-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\flot-chart\jquery.flot.growraf.html" />
+    <Content Include="App_Themes\Home\Chrome\js\flot-chart\jquery.flot.html" />
+    <Content Include="App_Themes\Home\Chrome\js\flot-chart\jquery.flot.pie.resize-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\flot-chart\jquery.flot.pie.resize.html" />
+    <Content Include="App_Themes\Home\Chrome\js\flot-chart\jquery.flot.resize-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\flot-chart\jquery.flot.resize.html" />
+    <Content Include="App_Themes\Home\Chrome\js\flot-chart\jquery.flot.tooltip.min-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\flot-chart\jquery.flot.tooltip.min.html" />
+    <Content Include="App_Themes\Home\Chrome\js\gauge\gauge-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\gauge\gauge.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jQuery-slimScroll-1.3.0\jquery.slimscroll-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jQuery-slimScroll-1.3.0\jquery.slimscroll.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery-ui\jquery-ui-1.10.1.custom.min-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery-ui\jquery-ui-1.10.1.custom.min-3.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery-ui\jquery-ui-1.10.1.custom.min-4.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery-ui\jquery-ui-1.10.1.custom.min.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery.customSelect.min-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery.customSelect.min.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery.dcjqaccordion.2.7-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery.dcjqaccordion.2.7.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery.nicescroll-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery.nicescroll.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery.scrollTo.min-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery.scrollTo.min.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery.scrollTo\jquery.scrollTo-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jquery.scrollTo\jquery.scrollTo.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jvector-map\jquery-jvectormap-1.2.2-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jvector-map\jquery-jvectormap-1.2.2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jvector-map\jquery-jvectormap-1.2.2.min-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jvector-map\jquery-jvectormap-1.2.2.min.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jvector-map\jquery-jvectormap-us-lcc-en-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\jvector-map\jquery-jvectormap-us-lcc-en.html" />
+    <Content Include="App_Themes\Home\Chrome\js\morris-chart\morris-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\morris-chart\morris-3.html" />
+    <Content Include="App_Themes\Home\Chrome\js\morris-chart\morris-4.html" />
+    <Content Include="App_Themes\Home\Chrome\js\morris-chart\morris.html" />
+    <Content Include="App_Themes\Home\Chrome\js\morris-chart\raphael-min-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\morris-chart\raphael-min.html" />
+    <Content Include="App_Themes\Home\Chrome\js\scripts-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\scripts.html" />
+    <Content Include="App_Themes\Home\Chrome\js\skycons\skycons-2.html" />
+    <Content Include="App_Themes\Home\Chrome\js\skycons\skycons.html" />
+    <Content Include="App_Themes\Home\Chrome\js\sparkline\jquery.sparkline.html" />
+    <Content Include="App_Themes\Home\Chrome\js\sparkline\jquery.sparkline.js" />
+    <Content Include="App_Themes\Home\css\bootstrap-reset.css" />
+    <Content Include="App_Themes\Home\css\bootstrap-switch.css" />
+    <Content Include="App_Themes\Home\css\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\css\bucket-ico-fonts.css" />
+    <Content Include="App_Themes\Home\css\clndr.css" />
+    <Content Include="App_Themes\Home\css\invoice-print.css" />
+    <Content Include="App_Themes\Home\css\jquery.stepsc4ca.css" />
+    <Content Include="App_Themes\Home\css\style-responsive.css" />
+    <Content Include="App_Themes\Home\css\style.css" />
+    <Content Include="App_Themes\Home\css\style3860.css" />
+    <Content Include="App_Themes\Home\css\stylec4ca.css" />
+    <Content Include="App_Themes\Home\css\table-responsive.css" />
+    <Content Include="App_Themes\Home\font-awesome\css\font-awesome.css" />
+    <Content Include="App_Themes\Home\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="App_Themes\Home\hpwos\bs3\css\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\hpwos\bs3\js\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\hpwos\css\bootstrap-reset.html" />
+    <Content Include="App_Themes\Home\hpwos\css\clndr.html" />
+    <Content Include="App_Themes\Home\hpwos\css\style-responsive.html" />
+    <Content Include="App_Themes\Home\hpwos\css\style.html" />
+    <Content Include="App_Themes\Home\hpwos\font-awesome\css\font-awesome.html" />
+    <Content Include="App_Themes\Home\hpwos\images\avatar-mini-2.html" />
+    <Content Include="App_Themes\Home\hpwos\images\avatar-mini-3.html" />
+    <Content Include="App_Themes\Home\hpwos\images\avatar-mini.html" />
+    <Content Include="App_Themes\Home\hpwos\images\avatar1.html" />
+    <Content Include="App_Themes\Home\hpwos\images\avatar1_small.html" />
+    <Content Include="App_Themes\Home\hpwos\images\chat-avatar2.html" />
+    <Content Include="App_Themes\Home\hpwos\images\chat-user-thumb-f.html" />
+    <Content Include="App_Themes\Home\hpwos\images\chat-user-thumb.png" />
+    <Content Include="App_Themes\Home\hpwos\images\favicon.html" />
+    <Content Include="App_Themes\Home\hpwos\images\logo.html" />
+    <Content Include="App_Themes\Home\hpwos\images\weather_image.html" />
+    <Content Include="App_Themes\Home\hpwos\js\calendar\clndr.html" />
+    <Content Include="App_Themes\Home\hpwos\js\calendar\moment-2.2.1.html" />
+    <Content Include="App_Themes\Home\hpwos\js\css3clock\css\style.html" />
+    <Content Include="App_Themes\Home\hpwos\js\css3clock\js\css3clock.html" />
+    <Content Include="App_Themes\Home\hpwos\js\dashboard.html" />
+    <Content Include="App_Themes\Home\hpwos\js\easypiechart\jquery.easypiechart.html" />
+    <Content Include="App_Themes\Home\hpwos\js\evnt.calendar.init.html" />
+    <Content Include="App_Themes\Home\hpwos\js\flot-chart\jquery.flot.animator.min.html" />
+    <Content Include="App_Themes\Home\hpwos\js\flot-chart\jquery.flot.growraf.html" />
+    <Content Include="App_Themes\Home\hpwos\js\flot-chart\jquery.flot.html" />
+    <Content Include="App_Themes\Home\hpwos\js\flot-chart\jquery.flot.pie.resize.html" />
+    <Content Include="App_Themes\Home\hpwos\js\flot-chart\jquery.flot.resize.html" />
+    <Content Include="App_Themes\Home\hpwos\js\flot-chart\jquery.flot.tooltip.min.html" />
+    <Content Include="App_Themes\Home\hpwos\js\gauge\gauge.html" />
+    <Content Include="App_Themes\Home\hpwos\js\jQuery-slimScroll-1.3.0\jquery.slimscroll.html" />
+    <Content Include="App_Themes\Home\hpwos\js\jquery-ui\jquery-ui-1.10.1.custom.min-2.html" />
+    <Content Include="App_Themes\Home\hpwos\js\jquery-ui\jquery-ui-1.10.1.custom.min.html" />
+    <Content Include="App_Themes\Home\hpwos\js\jquery.customSelect.min.html" />
+    <Content Include="App_Themes\Home\hpwos\js\jquery.dcjqaccordion.2.7.html" />
+    <Content Include="App_Themes\Home\hpwos\js\jquery.html" />
+    <Content Include="App_Themes\Home\hpwos\js\jquery.nicescroll.html" />
+    <Content Include="App_Themes\Home\hpwos\js\jquery.scrollTo.min.html" />
+    <Content Include="App_Themes\Home\hpwos\js\jquery.scrollTo\jquery.scrollTo.html" />
+    <Content Include="App_Themes\Home\hpwos\js\jvector-map\jquery-jvectormap-1.2.2.html" />
+    <Content Include="App_Themes\Home\hpwos\js\jvector-map\jquery-jvectormap-1.2.2.min.html" />
+    <Content Include="App_Themes\Home\hpwos\js\jvector-map\jquery-jvectormap-us-lcc-en.html" />
+    <Content Include="App_Themes\Home\hpwos\js\morris-chart\morris-2.html" />
+    <Content Include="App_Themes\Home\hpwos\js\morris-chart\morris.html" />
+    <Content Include="App_Themes\Home\hpwos\js\morris-chart\raphael-min.html" />
+    <Content Include="App_Themes\Home\hpwos\js\scripts.html" />
+    <Content Include="App_Themes\Home\hpwos\js\skycons\skycons.html" />
+    <Content Include="App_Themes\Home\hpwos\js\sparkline\jquery.sparkline.html" />
+    <Content Include="App_Themes\Home\images\404.png" />
+    <Content Include="App_Themes\Home\images\500.png" />
+    <Content Include="App_Themes\Home\images\acc-expand.png" />
+    <Content Include="App_Themes\Home\images\customSelect-arrow.gif" />
+    <Content Include="App_Themes\Home\images\Default.jpg" />
+    <Content Include="App_Themes\Home\images\details_close.png" />
+    <Content Include="App_Themes\Home\images\details_open.png" />
+    <Content Include="App_Themes\Home\images\favicon.html" />
+    <Content Include="App_Themes\Home\images\lls-logo.png" />
+    <Content Include="App_Themes\Home\images\lock-screen.jpg" />
+    <Content Include="App_Themes\Home\images\logo.png" />
+    <Content Include="App_Themes\Home\images\logo1.png" />
+    <Content Include="App_Themes\Home\images\logo_lls.png" />
+    <Content Include="App_Themes\Home\images\nav-expand.png" />
+    <Content Include="App_Themes\Home\images\search-icon.png" />
+    <Content Include="App_Themes\Home\images\top-arrow.png" />
+    <Content Include="App_Themes\Home\images\twitter_corner_black.png" />
+    <Content Include="App_Themes\Home\images\twitter_corner_blue.png" />
+    <Content Include="App_Themes\Home\img\favicon.html" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\css\demo_page.css" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\css\demo_table.css" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\images\back_disabled.png" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\images\back_enabled.png" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\images\back_enabled_hover.png" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\images\forward_disabled.png" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\images\forward_enabled.png" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\images\forward_enabled_hover.png" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\images\sort_asc.png" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\images\sort_asc_disabled.png" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\images\sort_both.png" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\images\sort_desc.png" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\images\sort_desc_disabled.png" />
+    <Content Include="App_Themes\Home\js\advanced-datatable\js\jquery.dataTables.js" />
+    <Content Include="App_Themes\Home\js\advanced-form.js" />
+    <Content Include="App_Themes\Home\js\bootstrap-colorpicker\css\colorpicker.css" />
+    <Content Include="App_Themes\Home\js\bootstrap-colorpicker\img\alpha.png" />
+    <Content Include="App_Themes\Home\js\bootstrap-colorpicker\img\hue.png" />
+    <Content Include="App_Themes\Home\js\bootstrap-colorpicker\img\saturation.png" />
+    <Content Include="App_Themes\Home\js\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="App_Themes\Home\js\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="App_Themes\Home\js\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="App_Themes\Home\js\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="App_Themes\Home\js\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="App_Themes\Home\js\bootstrap-daterangepicker\moment.min.js" />
+    <Content Include="App_Themes\Home\js\bootstrap-datetimepicker\css\datetimepicker.css" />
+    <Content Include="App_Themes\Home\js\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="App_Themes\Home\js\bootstrap-fileupload\bootstrap-fileupload.css" />
+    <Content Include="App_Themes\Home\js\bootstrap-fileupload\bootstrap-fileupload.js" />
+    <Content Include="App_Themes\Home\js\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="App_Themes\Home\js\bootstrap-switch.js" />
+    <Content Include="App_Themes\Home\js\bootstrap-timepicker\css\timepicker.css" />
+    <Content Include="App_Themes\Home\js\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="App_Themes\Home\js\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="App_Themes\Home\js\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="App_Themes\Home\js\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="App_Themes\Home\js\c3-chart.init.js" />
+    <Content Include="App_Themes\Home\js\c3-chart\c3.css" />
+    <Content Include="App_Themes\Home\js\c3-chart\c3.js" />
+    <Content Include="App_Themes\Home\js\calendar\clndr.js" />
+    <Content Include="App_Themes\Home\js\calendar\moment-2.2.1.js" />
+    <Content Include="App_Themes\Home\js\chart-js\Chart.js" />
+    <Content Include="App_Themes\Home\js\chartjs.init.js" />
+    <Content Include="App_Themes\Home\js\ckeditor\ckeditor.js" />
+    <Content Include="App_Themes\Home\js\css3clock\css\style.css" />
+    <Content Include="App_Themes\Home\js\css3clock\images\clockface.png" />
+    <Content Include="App_Themes\Home\js\css3clock\images\hourhand.png" />
+    <Content Include="App_Themes\Home\js\css3clock\images\minhand.png" />
+    <Content Include="App_Themes\Home\js\css3clock\images\sechand.png" />
+    <Content Include="App_Themes\Home\js\css3clock\js\css3clock.js" />
+    <Content Include="App_Themes\Home\js\dashboard.js" />
+    <Content Include="App_Themes\Home\js\data-tables\DT_bootstrap.css" />
+    <Content Include="App_Themes\Home\js\data-tables\DT_bootstrap.js" />
+    <Content Include="App_Themes\Home\js\data-tables\images\sort_asc.png" />
+    <Content Include="App_Themes\Home\js\data-tables\images\sort_asc_disabled.html" />
+    <Content Include="App_Themes\Home\js\data-tables\images\sort_both.png" />
+    <Content Include="App_Themes\Home\js\data-tables\images\sort_desc.png" />
+    <Content Include="App_Themes\Home\js\data-tables\images\sort_desc_disabled.html" />
+    <Content Include="App_Themes\Home\js\data-tables\jquery.dataTables.js" />
+    <Content Include="App_Themes\Home\js\draggable-portlet.js" />
+    <Content Include="App_Themes\Home\js\dynamic_table_init.js" />
+    <Content Include="App_Themes\Home\js\easypiechart\jquery.easypiechart.js" />
+    <Content Include="App_Themes\Home\js\evnt.calendar.init.js" />
+    <Content Include="App_Themes\Home\js\external-dragging-calendar.js" />
+    <Content Include="App_Themes\Home\js\file-uploader\css\jquery.fileupload-noscript.css" />
+    <Content Include="App_Themes\Home\js\file-uploader\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="App_Themes\Home\js\file-uploader\css\jquery.fileupload-ui.css" />
+    <Content Include="App_Themes\Home\js\file-uploader\css\jquery.fileupload.css" />
+    <Content Include="App_Themes\Home\js\file-uploader\img\loading.gif" />
+    <Content Include="App_Themes\Home\js\file-uploader\img\progressbar.gif" />
+    <Content Include="App_Themes\Home\js\file-uploader\js\jquery.fileupload-audio.js" />
+    <Content Include="App_Themes\Home\js\file-uploader\js\jquery.fileupload-image.js" />
+    <Content Include="App_Themes\Home\js\file-uploader\js\jquery.fileupload-process.js" />
+    <Content Include="App_Themes\Home\js\file-uploader\js\jquery.fileupload-ui.js" />
+    <Content Include="App_Themes\Home\js\file-uploader\js\jquery.fileupload-validate.js" />
+    <Content Include="App_Themes\Home\js\file-uploader\js\jquery.fileupload-video.js" />
+    <Content Include="App_Themes\Home\js\file-uploader\js\jquery.fileupload.js" />
+    <Content Include="App_Themes\Home\js\file-uploader\js\jquery.iframe-transport.js" />
+    <Content Include="App_Themes\Home\js\file-uploader\js\main.js" />
+    <Content Include="App_Themes\Home\js\file-uploader\js\vendor\jquery.ui.widget.js" />
+    <Content Include="App_Themes\Home\js\flot-chart\jquery.flot.animator.min.js" />
+    <Content Include="App_Themes\Home\js\flot-chart\jquery.flot.growraf.js" />
+    <Content Include="App_Themes\Home\js\flot-chart\jquery.flot.js" />
+    <Content Include="App_Themes\Home\js\flot-chart\jquery.flot.pie.resize.js" />
+    <Content Include="App_Themes\Home\js\flot-chart\jquery.flot.resize.js" />
+    <Content Include="App_Themes\Home\js\flot-chart\jquery.flot.selection.js" />
+    <Content Include="App_Themes\Home\js\flot-chart\jquery.flot.stack.js" />
+    <Content Include="App_Themes\Home\js\flot-chart\jquery.flot.time.js" />
+    <Content Include="App_Themes\Home\js\flot-chart\jquery.flot.tooltip.min.js" />
+    <Content Include="App_Themes\Home\js\flot.chart.init.js" />
+    <Content Include="App_Themes\Home\js\fuelux\css\tree-style.css" />
+    <Content Include="App_Themes\Home\js\fuelux\img\tree-icons.png" />
+    <Content Include="App_Themes\Home\js\fuelux\js\spinner.min.js" />
+    <Content Include="App_Themes\Home\js\fuelux\js\tree.min.js" />
+    <Content Include="App_Themes\Home\js\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="App_Themes\Home\js\fullcalendar\fullcalendar.min.js" />
+    <Content Include="App_Themes\Home\js\gauge\gauge.js" />
+    <Content Include="App_Themes\Home\js\google-map\data\points.js" />
+    <Content Include="App_Themes\Home\js\google-map\maplace.js" />
+    <Content Include="App_Themes\Home\js\gritter.js" />
+    <Content Include="App_Themes\Home\js\gritter\css\jquery.gritter.css" />
+    <Content Include="App_Themes\Home\js\gritter\images\gritter-light.png" />
+    <Content Include="App_Themes\Home\js\gritter\images\gritter.png" />
+    <Content Include="App_Themes\Home\js\gritter\images\ie-spacer.gif" />
+    <Content Include="App_Themes\Home\js\gritter\js\jquery.gritter.js" />
+    <Content Include="App_Themes\Home\js\hover-dropdown.js" />
+    <Content Include="App_Themes\Home\js\icheck-init.js" />
+    <Content Include="App_Themes\Home\js\iCheck\jquery.icheck.js" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\blue%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\blue.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\blue.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\green%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\green.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\green.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\grey%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\grey.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\grey.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\purple%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\purple.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\purple.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\red%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\red.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\red.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\yellow%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\yellow.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\flat\yellow.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\blue%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\blue.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\blue.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\green.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\green.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\minimal%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\minimal.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\minimal.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\purple%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\purple.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\purple.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\red%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\red.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\red.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\yellow%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\yellow.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\minimal\yellow.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\blue%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\blue.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\blue.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\green%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\green.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\green.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\purple%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\purple.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\purple.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\red%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\red.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\red.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\square%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\square.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\square.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\yellow%402x.png" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\yellow.css" />
+    <Content Include="App_Themes\Home\js\iCheck\skins\square\yellow.png" />
+    <Content Include="App_Themes\Home\js\ion.rangeSlider-1.8.2\css\ion.rangeSlider.css" />
+    <Content Include="App_Themes\Home\js\ion.rangeSlider-1.8.2\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="App_Themes\Home\js\ion.rangeSlider-1.8.2\img\sprite-skin-flat.png" />
+    <Content Include="App_Themes\Home\js\ion.rangeSlider-1.8.2\js\ion-rangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="App_Themes\Home\js\jplayer\jplayer.init.js" />
+    <Content Include="App_Themes\Home\js\jplayer\js\jquery.jplayer.min.js" />
+    <Content Include="App_Themes\Home\js\jplayer\skin\blue.monday\jplayer.blue.monday.css" />
+    <Content Include="App_Themes\Home\js\jplayer\skin\blue.monday\jplayer.blue.monday.png" />
+    <Content Include="App_Themes\Home\js\jplayer\skin\blue.monday\jplayer.blue.monday.seeking.gif" />
+    <Content Include="App_Themes\Home\js\jplayer\skin\blue.monday\jplayer.blue.monday.video.play.png" />
+    <Content Include="App_Themes\Home\js\jquery-1.8.3.min.js" />
+    <Content Include="App_Themes\Home\js\jquery-multi-select\css\multi-select.css" />
+    <Content Include="App_Themes\Home\js\jquery-multi-select\img\switch.png" />
+    <Content Include="App_Themes\Home\js\jquery-multi-select\js\jquery.multi-select.js" />
+    <Content Include="App_Themes\Home\js\jquery-multi-select\js\jquery.quicksearch.js" />
+    <Content Include="App_Themes\Home\js\jQuery-slimScroll-1.3.0\jquery.slimscroll.js" />
+    <Content Include="App_Themes\Home\js\jquery-steps\jquery.steps.js" />
+    <Content Include="App_Themes\Home\js\jquery-tags-input\jquery.tagsinput.css" />
+    <Content Include="App_Themes\Home\js\jquery-tags-input\jquery.tagsinput.js" />
+    <Content Include="App_Themes\Home\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\animated-overlay.gif" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="App_Themes\Home\js\jquery-ui\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="App_Themes\Home\js\jquery-ui\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="App_Themes\Home\js\jquery.customSelect.min.js" />
+    <Content Include="App_Themes\Home\js\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="App_Themes\Home\js\jquery.isotope.js" />
+    <Content Include="App_Themes\Home\js\jquery.js" />
+    <Content Include="App_Themes\Home\js\jquery.nicescroll.js" />
+    <Content Include="App_Themes\Home\js\jquery.scrollTo.min.js" />
+    <Content Include="App_Themes\Home\js\jquery.scrollTo\jquery.scrollTo.js" />
+    <Content Include="App_Themes\Home\js\jquery.validate.min.js" />
+    <Content Include="App_Themes\Home\js\jvector-map\jquery-jvectormap-1.2.2.css" />
+    <Content Include="App_Themes\Home\js\jvector-map\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="App_Themes\Home\js\jvector-map\jquery-jvectormap-us-lcc-en.js" />
+    <Content Include="App_Themes\Home\js\jvector-map\jqvmap\data\jquery.vmap.sampledata.js" />
+    <Content Include="App_Themes\Home\js\jvector-map\jqvmap\jquery.vmap.js" />
+    <Content Include="App_Themes\Home\js\jvector-map\jqvmap\maps\continents\jquery.vmap.asia.js" />
+    <Content Include="App_Themes\Home\js\jvector-map\jqvmap\maps\continents\jquery.vmap.australia.js" />
+    <Content Include="App_Themes\Home\js\jvector-map\jqvmap\maps\continents\jquery.vmap.europe.js" />
+    <Content Include="App_Themes\Home\js\jvector-map\jqvmap\maps\jquery.vmap.world.js" />
+    <Content Include="App_Themes\Home\js\mini-upload-form\assets\css\bucketmin.css" />
+    <Content Include="App_Themes\Home\js\mini-upload-form\assets\img\icons.png" />
+    <Content Include="App_Themes\Home\js\mini-upload-form\assets\js\jquery.fileupload.js" />
+    <Content Include="App_Themes\Home\js\mini-upload-form\assets\js\jquery.iframe-transport.js" />
+    <Content Include="App_Themes\Home\js\mini-upload-form\assets\js\jquery.knob.js" />
+    <Content Include="App_Themes\Home\js\mini-upload-form\assets\js\jquery.ui.widget.js" />
+    <Content Include="App_Themes\Home\js\mini-upload-form\assets\js\script.js" />
+    <Content Include="App_Themes\Home\js\morris-chart\morris.css" />
+    <Content Include="App_Themes\Home\js\morris-chart\morris.js" />
+    <Content Include="App_Themes\Home\js\morris-chart\raphael-min.js" />
+    <Content Include="App_Themes\Home\js\morris.init.js" />
+    <Content Include="App_Themes\Home\js\nestable.js" />
+    <Content Include="App_Themes\Home\js\nestable\jquery.nestable.css" />
+    <Content Include="App_Themes\Home\js\nestable\jquery.nestable.js" />
+    <Content Include="App_Themes\Home\js\scripts.js" />
+    <Content Include="App_Themes\Home\js\select-init.js" />
+    <Content Include="App_Themes\Home\js\select2\select2-spinner.gif" />
+    <Content Include="App_Themes\Home\js\select2\select2.css" />
+    <Content Include="App_Themes\Home\js\select2\select2.js" />
+    <Content Include="App_Themes\Home\js\select2\select2.png" />
+    <Content Include="App_Themes\Home\js\select2\select2x2.png" />
+    <Content Include="App_Themes\Home\js\skycons\skycons.js" />
+    <Content Include="App_Themes\Home\js\sparkline\jquery.sparkline.js" />
+    <Content Include="App_Themes\Home\js\table-editable.js" />
+    <Content Include="App_Themes\Home\js\toggle-init.js" />
+    <Content Include="App_Themes\Home\js\tree.js" />
+    <Content Include="App_Themes\Home\js\validation-init.js" />
+    <Content Include="App_Themes\Home\Opera\bs3\css\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\Opera\bs3\js\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\Opera\css\bootstrap-reset.html" />
+    <Content Include="App_Themes\Home\Opera\css\clndr.html" />
+    <Content Include="App_Themes\Home\Opera\css\style-responsive.css" />
+    <Content Include="App_Themes\Home\Opera\css\style.html" />
+    <Content Include="App_Themes\Home\Opera\font-awesome\css\font-awesome.html" />
+    <Content Include="App_Themes\Home\Opera\images\avatar-mini-2.html" />
+    <Content Include="App_Themes\Home\Opera\images\avatar-mini-3.html" />
+    <Content Include="App_Themes\Home\Opera\images\avatar-mini.html" />
+    <Content Include="App_Themes\Home\Opera\images\avatar1.html" />
+    <Content Include="App_Themes\Home\Opera\images\avatar1_small.html" />
+    <Content Include="App_Themes\Home\Opera\images\chat-avatar2.html" />
+    <Content Include="App_Themes\Home\Opera\images\chat-user-thumb-f.html" />
+    <Content Include="App_Themes\Home\Opera\images\chat-user-thumb.html" />
+    <Content Include="App_Themes\Home\Opera\images\favicon.html" />
+    <Content Include="App_Themes\Home\Opera\images\logo.html" />
+    <Content Include="App_Themes\Home\Opera\images\weather_image.html" />
+    <Content Include="App_Themes\Home\Opera\js\calendar\clndr.html" />
+    <Content Include="App_Themes\Home\Opera\js\calendar\moment-2.2.1.html" />
+    <Content Include="App_Themes\Home\Opera\js\css3clock\css\style.html" />
+    <Content Include="App_Themes\Home\Opera\js\css3clock\js\css3clock.html" />
+    <Content Include="App_Themes\Home\Opera\js\dashboard.html" />
+    <Content Include="App_Themes\Home\Opera\js\easypiechart\jquery.easypiechart.html" />
+    <Content Include="App_Themes\Home\Opera\js\evnt.calendar.init.html" />
+    <Content Include="App_Themes\Home\Opera\js\flot-chart\jquery.flot.animator.min.html" />
+    <Content Include="App_Themes\Home\Opera\js\flot-chart\jquery.flot.growraf.html" />
+    <Content Include="App_Themes\Home\Opera\js\flot-chart\jquery.flot.html" />
+    <Content Include="App_Themes\Home\Opera\js\flot-chart\jquery.flot.pie.resize.html" />
+    <Content Include="App_Themes\Home\Opera\js\flot-chart\jquery.flot.resize.html" />
+    <Content Include="App_Themes\Home\Opera\js\flot-chart\jquery.flot.tooltip.min.html" />
+    <Content Include="App_Themes\Home\Opera\js\gauge\gauge.html" />
+    <Content Include="App_Themes\Home\Opera\js\jQuery-slimScroll-1.3.0\jquery.slimscroll.html" />
+    <Content Include="App_Themes\Home\Opera\js\jquery-ui\jquery-ui-1.10.1.custom.min-2.html" />
+    <Content Include="App_Themes\Home\Opera\js\jquery-ui\jquery-ui-1.10.1.custom.min.html" />
+    <Content Include="App_Themes\Home\Opera\js\jquery.customSelect.min.html" />
+    <Content Include="App_Themes\Home\Opera\js\jquery.dcjqaccordion.2.7.html" />
+    <Content Include="App_Themes\Home\Opera\js\jquery.html" />
+    <Content Include="App_Themes\Home\Opera\js\jquery.nicescroll.html" />
+    <Content Include="App_Themes\Home\Opera\js\jquery.scrollTo.min.html" />
+    <Content Include="App_Themes\Home\Opera\js\jquery.scrollTo\jquery.scrollTo.html" />
+    <Content Include="App_Themes\Home\Opera\js\jvector-map\jquery-jvectormap-1.2.2.html" />
+    <Content Include="App_Themes\Home\Opera\js\jvector-map\jquery-jvectormap-1.2.2.min.html" />
+    <Content Include="App_Themes\Home\Opera\js\jvector-map\jquery-jvectormap-us-lcc-en.html" />
+    <Content Include="App_Themes\Home\Opera\js\morris-chart\morris-2.html" />
+    <Content Include="App_Themes\Home\Opera\js\morris-chart\morris.html" />
+    <Content Include="App_Themes\Home\Opera\js\morris-chart\raphael-min.html" />
+    <Content Include="App_Themes\Home\Opera\js\scripts.html" />
+    <Content Include="App_Themes\Home\Opera\js\skycons\skycons.html" />
+    <Content Include="App_Themes\Home\Opera\js\sparkline\jquery.sparkline.html" />
+    <Content Include="App_Themes\Home\plugins\bs3\css\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\plugins\bs3\js\bootstrap.min.html" />
+    <Content Include="App_Themes\Home\plugins\css\bootstrap-reset.html" />
+    <Content Include="App_Themes\Home\plugins\css\clndr.html" />
+    <Content Include="App_Themes\Home\plugins\css\style-responsive.html" />
+    <Content Include="App_Themes\Home\plugins\css\style.html" />
+    <Content Include="App_Themes\Home\plugins\font-awesome\css\font-awesome.html" />
+    <Content Include="App_Themes\Home\plugins\images\avatar-mini-2.html" />
+    <Content Include="App_Themes\Home\plugins\images\avatar-mini-3.html" />
+    <Content Include="App_Themes\Home\plugins\images\avatar-mini.html" />
+    <Content Include="App_Themes\Home\plugins\images\avatar1.html" />
+    <Content Include="App_Themes\Home\plugins\images\avatar1_small.html" />
+    <Content Include="App_Themes\Home\plugins\images\chat-avatar2.html" />
+    <Content Include="App_Themes\Home\plugins\images\chat-user-thumb-f.html" />
+    <Content Include="App_Themes\Home\plugins\images\chat-user-thumb.html" />
+    <Content Include="App_Themes\Home\plugins\images\favicon.html" />
+    <Content Include="App_Themes\Home\plugins\images\logo.html" />
+    <Content Include="App_Themes\Home\plugins\images\weather_image.html" />
+    <Content Include="App_Themes\Home\plugins\js\calendar\clndr.html" />
+    <Content Include="App_Themes\Home\plugins\js\calendar\moment-2.2.1.html" />
+    <Content Include="App_Themes\Home\plugins\js\css3clock\css\style.html" />
+    <Content Include="App_Themes\Home\plugins\js\css3clock\js\css3clock.html" />
+    <Content Include="App_Themes\Home\plugins\js\dashboard.html" />
+    <Content Include="App_Themes\Home\plugins\js\easypiechart\jquery.easypiechart.html" />
+    <Content Include="App_Themes\Home\plugins\js\evnt.calendar.init.html" />
+    <Content Include="App_Themes\Home\plugins\js\flot-chart\jquery.flot.animator.min.html" />
+    <Content Include="App_Themes\Home\plugins\js\flot-chart\jquery.flot.growraf.html" />
+    <Content Include="App_Themes\Home\plugins\js\flot-chart\jquery.flot.html" />
+    <Content Include="App_Themes\Home\plugins\js\flot-chart\jquery.flot.pie.resize.html" />
+    <Content Include="App_Themes\Home\plugins\js\flot-chart\jquery.flot.resize.html" />
+    <Content Include="App_Themes\Home\plugins\js\flot-chart\jquery.flot.tooltip.min.html" />
+    <Content Include="App_Themes\Home\plugins\js\gauge\gauge.html" />
+    <Content Include="App_Themes\Home\plugins\js\jQuery-slimScroll-1.3.0\jquery.slimscroll.html" />
+    <Content Include="App_Themes\Home\plugins\js\jquery-ui\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="App_Themes\Home\plugins\js\jquery-ui\jquery-ui-1.10.1.custom.min.html" />
+    <Content Include="App_Themes\Home\plugins\js\jquery.customSelect.min.html" />
+    <Content Include="App_Themes\Home\plugins\js\jquery.dcjqaccordion.2.7.html" />
+    <Content Include="App_Themes\Home\plugins\js\jquery.html" />
+    <Content Include="App_Themes\Home\plugins\js\jquery.nicescroll.html" />
+    <Content Include="App_Themes\Home\plugins\js\jquery.scrollTo.min.html" />
+    <Content Include="App_Themes\Home\plugins\js\jquery.scrollTo\jquery.scrollTo.html" />
+    <Content Include="App_Themes\Home\plugins\js\jvector-map\jquery-jvectormap-1.2.2.html" />
+    <Content Include="App_Themes\Home\plugins\js\jvector-map\jquery-jvectormap-1.2.2.min.html" />
+    <Content Include="App_Themes\Home\plugins\js\jvector-map\jquery-jvectormap-us-lcc-en.html" />
+    <Content Include="App_Themes\Home\plugins\js\morris-chart\morris-2.html" />
+    <Content Include="App_Themes\Home\plugins\js\morris-chart\morris.html" />
+    <Content Include="App_Themes\Home\plugins\js\morris-chart\raphael-min.html" />
+    <Content Include="App_Themes\Home\plugins\js\scripts.html" />
+    <Content Include="App_Themes\Home\plugins\js\skycons\skycons.html" />
+    <Content Include="App_Themes\Home\plugins\js\sparkline\jquery.sparkline.html" />
+    <Content Include="App_Themes\Login\ajax.googleapis.com\ajax\libs\jqueryui\1.10.3\jquery-ui.min.js" />
+    <Content Include="App_Themes\Login\ajax.googleapis.com\ajax\libs\jquery\1.10.2\jquery.min.js" />
+    <Content Include="App_Themes\Login\ajax.googleapis.com\ajax\libs\jquery\2.0.3\jquery.min.js" />
+    <Content Include="App_Themes\Login\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="App_Themes\Login\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="App_Themes\Login\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="App_Themes\Login\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="App_Themes\Login\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="App_Themes\Login\images\bckgrnd.jpg" />
+    <Content Include="App_Themes\Login\images\blank.png" />
+    <Content Include="App_Themes\Login\images\datatables\sort_asc.png" />
+    <Content Include="App_Themes\Login\images\datatables\sort_asc_disabled.png" />
+    <Content Include="App_Themes\Login\images\datatables\sort_both.png" />
+    <Content Include="App_Themes\Login\images\datatables\sort_desc.png" />
+    <Content Include="App_Themes\Login\images\datatables\sort_desc_disabled.png" />
+    <Content Include="App_Themes\Login\images\list-icon.png" />
+    <Content Include="App_Themes\Login\images\logo.png" />
+    <Content Include="App_Themes\Login\images\logo_lls.png" />
+    <Content Include="App_Themes\Login\images\proton-logo.png" />
+    <Content Include="App_Themes\Login\images\spinners\130.gif" />
+    <Content Include="App_Themes\Login\images\spinners\2.gif" />
+    <Content Include="App_Themes\Login\images\spinners\20.gif" />
+    <Content Include="App_Themes\Login\images\spinners\22.gif" />
+    <Content Include="App_Themes\Login\images\spinners\239.gif" />
+    <Content Include="App_Themes\Login\images\spinners\282.gif" />
+    <Content Include="App_Themes\Login\images\spinners\284.gif" />
+    <Content Include="App_Themes\Login\images\spinners\3.gif" />
+    <Content Include="App_Themes\Login\images\spinners\301.gif" />
+    <Content Include="App_Themes\Login\images\spinners\320.gif" />
+    <Content Include="App_Themes\Login\images\spinners\325.gif" />
+    <Content Include="App_Themes\Login\images\spinners\328.gif" />
+    <Content Include="App_Themes\Login\images\spinners\332.gif" />
+    <Content Include="App_Themes\Login\images\spinners\334.gif" />
+    <Content Include="App_Themes\Login\images\spinners\76.gif" />
+    <Content Include="App_Themes\Login\images\spinners\82.gif" />
+    <Content Include="App_Themes\Login\images\user-icons\user1.jpg" />
+    <Content Include="App_Themes\Login\images\user-icons\user2.jpg" />
+    <Content Include="App_Themes\Login\images\user-icons\user3.jpg" />
+    <Content Include="App_Themes\Login\images\user-icons\user4.jpg" />
+    <Content Include="App_Themes\Login\images\user-icons\user5.jpg" />
+    <Content Include="App_Themes\Login\scripts\4fd70cf1.main.js" />
+    <Content Include="App_Themes\Login\scripts\9f7a46ed.proton.js" />
+    <Content Include="App_Themes\Login\scripts\e1d08589.bootstrap.min.js" />
+    <Content Include="App_Themes\Login\scripts\proton\08365641.user-nav.js" />
+    <Content Include="App_Themes\Login\scripts\proton\1247aa03.image-gallery-uploader.js" />
+    <Content Include="App_Themes\Login\scripts\proton\2af41e9a.timeout.js" />
+    <Content Include="App_Themes\Login\scripts\proton\3100cc6d.graphsStats.js" />
+    <Content Include="App_Themes\Login\scripts\proton\4a917aa3.intro.js" />
+    <Content Include="App_Themes\Login\scripts\proton\5558cd34.tables.js" />
+    <Content Include="App_Themes\Login\scripts\proton\61b9ced9.dashdemo.js" />
+    <Content Include="App_Themes\Login\scripts\proton\6a37141b.userProfile.js" />
+    <Content Include="App_Themes\Login\scripts\proton\7bb310ef.calendar.js" />
+    <Content Include="App_Themes\Login\scripts\proton\8b870695.ui-components-general.js" />
+    <Content Include="App_Themes\Login\scripts\proton\b8d88fcc.maps.js" />
+    <Content Include="App_Themes\Login\scripts\proton\ba45a7b8.sidebar.js" />
+    <Content Include="App_Themes\Login\scripts\proton\c3beb31d.main-nav.js" />
+    <Content Include="App_Themes\Login\scripts\proton\c5769bf5.ui-components-sliders.js" />
+    <Content Include="App_Themes\Login\scripts\proton\d6695f0b.common.js" />
+    <Content Include="App_Themes\Login\scripts\proton\de9cba6c.forms.js" />
+    <Content Include="App_Themes\Login\scripts\proton\e9e962ee.dashboard.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\bootstrap-datetimepicker.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\bootstrap-session-timeout.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\bootstrap-slider.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\bootstrap-switch.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\bootstrap-tagsinput.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\charCount.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\datatables.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\dropzone.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\farbtastic.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\fileinput.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\fullcalendar.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\intro.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\jquery-ui.custom.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\jquery.autotab.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\jquery.cookie.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\jquery.dataTables.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\jquery.jstree.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\jquery.maskedinput.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\jquery.pnotify.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\jquery.raty.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\jquery.sparkline.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\jquery.textareaCounter.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\jquery.uniform.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\modernizr.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\morris.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\numeral.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\parsley.extend.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\parsley.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\raphael-min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\select2.min.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\summernote.js" />
+    <Content Include="App_Themes\Login\scripts\vendor\tinymce\tinymce.min.js" />
+    <Content Include="App_Themes\Login\styles\40ff7bd7.font-titillium.css" />
+    <Content Include="App_Themes\Login\styles\6227bbe5.font-awesome.css" />
+    <Content Include="App_Themes\Login\styles\92bc1fe4.bootstrap.css" />
+    <Content Include="App_Themes\Login\styles\aaf5c053.proton.css" />
+    <Content Include="App_Themes\Login\styles\fonts\fontawesome-webfont.svg" />
+    <Content Include="App_Themes\Login\styles\fonts\proton\proton-icons.svg" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-bold-webfont.svg" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-extralight-webfont.svg" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-regular-webfont.svg" />
+    <Content Include="App_Themes\Login\styles\select2.html" />
+    <Content Include="App_Themes\Login\styles\vendor\animate.css" />
+    <Content Include="App_Themes\Login\styles\vendor\datatables.css" />
+    <Content Include="App_Themes\Login\styles\vendor\dropzone\css\basic.css" />
+    <Content Include="App_Themes\Login\styles\vendor\farbtastic\farbtastic.css" />
+    <Content Include="App_Themes\Login\styles\vendor\farbtastic\marker.png" />
+    <Content Include="App_Themes\Login\styles\vendor\farbtastic\mask.png" />
+    <Content Include="App_Themes\Login\styles\vendor\farbtastic\wheel.png" />
+    <Content Include="App_Themes\Login\styles\vendor\fullcalendar.css" />
+    <Content Include="App_Themes\Login\styles\vendor\jquery.pnotify.default.css" />
+    <Content Include="App_Themes\Login\styles\vendor\jstree-theme\proton\d-ie8.png" />
+    <Content Include="App_Themes\Login\styles\vendor\jstree-theme\proton\d.png" />
+    <Content Include="App_Themes\Login\styles\vendor\jstree-theme\proton\file-ie8.png" />
+    <Content Include="App_Themes\Login\styles\vendor\jstree-theme\proton\file.png" />
+    <Content Include="App_Themes\Login\styles\vendor\jstree-theme\proton\throbber.html" />
+    <Content Include="App_Themes\Login\styles\vendor\select2\select2-spinner.gif" />
+    <Content Include="App_Themes\Login\styles\vendor\select2\select2.css" />
+    <Content Include="App_Themes\Login\styles\vendor\select2\select2.png" />
+    <Content Include="App_Themes\Login\styles\vendor\select2\select2x2.png" />
+    <Content Include="App_Themes\Login\styles\vendor\uniformjs\css\uniform.default.css" />
+    <Content Include="App_Themes\Login\styles\vendor\uniformjs\images\bg-input-focus.png" />
+    <Content Include="App_Themes\Login\styles\vendor\uniformjs\images\bg-input.png" />
+    <Content Include="App_Themes\Login\styles\vendor\uniformjs\images\sprite.png" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\ChatStyle.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="demo.css" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Media\elements\context_menu\bg.png" />
+    <Content Include="Media\elements\context_menu\bg3white.png" />
+    <Content Include="Media\elements\context_menu\left.png" />
+    <Content Include="Media\elements\context_menu\right.png" />
+    <Content Include="Media\month_silver_event20.gif" />
+    <Content Include="Media\month_silver_top20.gif" />
+    <Content Include="packages.config" />
+    <Content Include="Panel\Calendar.aspx" />
+    <Content Include="Panel\ChangePassword.aspx" />
+    <Content Include="Panel\CreateEvent.aspx" />
+    <Content Include="Panel\Dashboard.aspx" />
+    <Content Include="Panel\DeleteFile.aspx" />
+    <Content Include="Panel\EditProfile.aspx" />
+    <Content Include="Panel\Error.aspx" />
+    <Content Include="Panel\EventDisplay.aspx" />
+    <Content Include="Panel\FileManager.aspx" />
+    <Content Include="Panel\ForgotPassword.aspx" />
+    <Content Include="Panel\index.htm" />
+    <Fakes Include="Fakes\Microsoft.AspNet.SignalR.Core.fakes" />
+    <Content Include="Panel\Files\Thumbs.db" />
+    <Content Include="Panel\PanelAdmin.Master" />
+    <Content Include="App_Themes\Home\bs3\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Themes\Home\bs3\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Themes\Home\bs3\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Themes\Home\bs3\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="App_Themes\Home\bucket-ico-fonts\bucket-ico-font.eot" />
+    <Content Include="App_Themes\Home\bucket-ico-fonts\bucket-ico-font.ttf" />
+    <Content Include="App_Themes\Home\bucket-ico-fonts\bucket-ico-font.woff" />
+    <Content Include="App_Themes\Home\bucket-ico-fonts\bucket-ico-fontd41d.eot" />
+    <Content Include="App_Themes\Home\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="App_Themes\Home\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="App_Themes\Home\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="App_Themes\Home\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="App_Themes\Home\images\Thumbs.db" />
+    <Content Include="App_Themes\Login\styles\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="App_Themes\Login\styles\fonts\fontawesome-webfontf77b.eot" />
+    <Content Include="App_Themes\Login\styles\fonts\fontawesome-webfontf77b.ttf" />
+    <Content Include="App_Themes\Login\styles\fonts\fontawesome-webfontf77b.woff" />
+    <Content Include="App_Themes\Login\styles\fonts\proton\proton-icons.eot" />
+    <Content Include="App_Themes\Login\styles\fonts\proton\proton-icons.ttf" />
+    <Content Include="App_Themes\Login\styles\fonts\proton\proton-icons.woff" />
+    <Content Include="App_Themes\Login\styles\fonts\proton\proton-iconsd41d.eot" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-bold-webfont.eot" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-bold-webfont.ttf" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-bold-webfont.woff" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-bold-webfontd41d.eot" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-extralight-webfont.eot" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-extralight-webfont.ttf" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-extralight-webfont.woff" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-extralight-webfontd41d.eot" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-regular-webfont.eot" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-regular-webfont.ttf" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-regular-webfont.woff" />
+    <Content Include="App_Themes\Login\styles\fonts\titillium\titilliumweb-regular-webfontd41d.eot" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Panel\LinkedIn.aspx" />
+    <Content Include="Panel\LockScreen.aspx" />
+    <Content Include="Panel\Login.aspx" />
+    <Content Include="Panel\Members.aspx" />
+    <Content Include="Panel\Messages.aspx" />
+    <Content Include="Panel\Poll.aspx" />
+    <Content Include="Panel\PollAns.aspx" />
+    <Content Include="Panel\PollCreation.aspx" />
+    <Content Include="Panel\PollSolutions.aspx" />
+    <Content Include="Panel\Profile.aspx" />
+    <Content Include="Panel\ResetPassword.aspx" />
+    <Content Include="Panel\UploadFile.aspx" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.signalR-1.0.0.js" />
+    <Content Include="Scripts\jquery.signalR-1.0.0.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\ui\jquery.ui.core.js" />
+    <Content Include="Scripts\ui\jquery.ui.dialog.js" />
+    <Content Include="Scripts\ui\jquery.ui.draggable.js" />
+    <Content Include="Scripts\ui\jquery.ui.mouse.js" />
+    <Content Include="Scripts\ui\jquery.ui.resizable.js" />
+    <Content Include="Scripts\ui\jquery.ui.widget.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChatHub.cs" />
+    <Compile Include="Common\MessageDetail.cs" />
+    <Compile Include="Common\UserDetail.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\CreateEvent.aspx.cs">
+      <DependentUpon>CreateEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\CreateEvent.aspx.designer.cs">
+      <DependentUpon>CreateEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\DeleteFile.aspx.cs">
+      <DependentUpon>DeleteFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\DeleteFile.aspx.designer.cs">
+      <DependentUpon>DeleteFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\EditProfile.aspx.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\EditProfile.aspx.designer.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\EventDisplay.aspx.cs">
+      <DependentUpon>EventDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\EventDisplay.aspx.designer.cs">
+      <DependentUpon>EventDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\FileManager.aspx.cs">
+      <DependentUpon>FileManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\FileManager.aspx.designer.cs">
+      <DependentUpon>FileManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\index.htm.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\index.htm.designer.cs">
+      <DependentUpon>index.htm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\LinkedIn.aspx.cs">
+      <DependentUpon>LinkedIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\LinkedIn.aspx.designer.cs">
+      <DependentUpon>LinkedIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\LockScreen.aspx.cs">
+      <DependentUpon>LockScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\LockScreen.aspx.designer.cs">
+      <DependentUpon>LockScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Members.aspx.cs">
+      <DependentUpon>Members.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\Members.aspx.designer.cs">
+      <DependentUpon>Members.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Messages.aspx.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\Messages.aspx.designer.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\PanelAdmin.Master.cs">
+      <DependentUpon>PanelAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\PanelAdmin.Master.designer.cs">
+      <DependentUpon>PanelAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Poll.aspx.cs">
+      <DependentUpon>Poll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\Poll.aspx.designer.cs">
+      <DependentUpon>Poll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\PollAns.aspx.cs">
+      <DependentUpon>PollAns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\PollAns.aspx.designer.cs">
+      <DependentUpon>PollAns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\PollCreation.aspx.cs">
+      <DependentUpon>PollCreation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\PollCreation.aspx.designer.cs">
+      <DependentUpon>PollCreation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\PollSolutions.aspx.cs">
+      <DependentUpon>PollSolutions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\PollSolutions.aspx.designer.cs">
+      <DependentUpon>PollSolutions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\UploadFile.aspx.cs">
+      <DependentUpon>UploadFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Panel\UploadFile.aspx.designer.cs">
+      <DependentUpon>UploadFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Themes\Home\images\flags\" />
+    <Folder Include="Scripts\NewFolder1\" />
+    <Folder Include="Scripts\NewFolder2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6333/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
